@@ -165,7 +165,7 @@
 
         <!-- Copyright -->
         <div class="footer-divider"></div>
-        <p class="copyright">© 2024 Hoàng Tráng Shop. All rights reserved.</p>
+        <p class="copyright">© 2024 ShopAccGiaPhong. All rights reserved.</p>
       </div>
     </footer>
   </div>

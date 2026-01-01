@@ -11,9 +11,9 @@
 
       <!-- Navigation -->
       <nav class="header-nav">
-        <a href="#" class="nav-link">Trang chủ</a>
-        <a href="#" class="nav-link">Nạp tiền</a>
-        <a href="#" class="nav-link">Lịch sử</a>
+        <router-link to="/" class="nav-link" :class="{ active: $route.path === '/' }">Trang chủ</router-link>
+        <router-link to="/topup" class="nav-link" :class="{ active: $route.path === '/topup' }">Nạp tiền</router-link>
+        <router-link to="/history" class="nav-link" :class="{ active: $route.path === '/history' }">Lịch sử</router-link>
         <a href="#" class="nav-link">Blog</a>
       </nav>
 
@@ -57,10 +57,10 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" :class="{ active: mobileMenuOpen }">
       <nav class="mobile-nav">
-        <a href="#" class="mobile-nav-link">Trang chủ</a>
-        <a href="#" class="mobile-nav-link">Nạp tiền</a>
-        <a href="#" class="mobile-nav-link">Lịch sử</a>
-        <a href="#" class="mobile-nav-link">Blog</a>
+        <router-link to="/" class="mobile-nav-link" @click="mobileMenuOpen = false">Trang chủ</router-link>
+        <router-link to="/topup" class="mobile-nav-link" @click="mobileMenuOpen = false">Nạp tiền</router-link>
+        <router-link to="/history" class="mobile-nav-link" @click="mobileMenuOpen = false">Lịch sử</router-link>
+        <a href="#" class="mobile-nav-link" @click="mobileMenuOpen = false">Blog</a>
       </nav>
       <div class="mobile-auth">
         <router-link to="/login" class="btn-login">Đăng nhập</router-link>
@@ -138,6 +138,10 @@ export default {
 
 .nav-link:hover {
   color: var(--text-primary);
+}
+
+.nav-link.active {
+  color: var(--primary);
 }
 
 /* Header Actions */
