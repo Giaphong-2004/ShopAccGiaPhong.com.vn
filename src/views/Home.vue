@@ -27,76 +27,10 @@
           <div class="game-card">
             <div class="game-image">
               <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=500&fit=crop" alt="Free Fire">
-              <div class="game-badge">95+ Tài khoản</div>
+              <div class="game-badge">90+ Key đã bán</div>
             </div>
             <div class="game-info">
-              <h3 class="game-title">Free Fire</h3>
-            </div>
-          </div>
-
-          <!-- Game Card 3 -->
-          <div class="game-card">
-            <div class="game-image">
-              <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=500&fit=crop" alt="PUBG Mobile">
-              <div class="game-badge">80+ Tài khoản</div>
-            </div>
-            <div class="game-info">
-              <h3 class="game-title">PUBG Mobile</h3>
-            </div>
-          </div>
-
-          <!-- Game Card 4 -->
-          <div class="game-card">
-            <div class="game-image">
-              <img src="https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=400&h=500&fit=crop" alt="Genshin Impact">
-              <div class="game-badge">160+ Tài khoản</div>
-            </div>
-            <div class="game-info">
-              <h3 class="game-title">Genshin Impact</h3>
-            </div>
-          </div>
-
-          <!-- Game Card 5 -->
-          <div class="game-card">
-            <div class="game-image">
-              <img src="https://images.unsplash.com/photo-1580327344181-c1163234e5a0?w=400&h=500&fit=crop" alt="Tốc Chiến">
-              <div class="game-badge">70+ Tài khoản</div>
-            </div>
-            <div class="game-info">
-              <h3 class="game-title">Tốc Chiến</h3>
-            </div>
-          </div>
-
-          <!-- Game Card 6 -->
-          <div class="game-card">
-            <div class="game-image">
-              <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=500&fit=crop" alt="Valorant">
-              <div class="game-badge">110+ Tài khoản</div>
-            </div>
-            <div class="game-info">
-              <h3 class="game-title">Valorant</h3>
-            </div>
-          </div>
-
-          <!-- Game Card 7 -->
-          <div class="game-card">
-            <div class="game-image">
-              <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=500&fit=crop" alt="Roblox">
-              <div class="game-badge">200+ Tài khoản</div>
-            </div>
-            <div class="game-info">
-              <h3 class="game-title">Roblox</h3>
-            </div>
-          </div>
-
-          <!-- Game Card 8 -->
-          <div class="game-card">
-            <div class="game-image">
-              <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&h=500&fit=crop" alt="FIFA Online 4">
-              <div class="game-badge">50+ Tài khoản</div>
-            </div>
-            <div class="game-info">
-              <h3 class="game-title">FIFA Online 4</h3>
+              <h3 class="game-title">Hack Liên Quân Ios</h3>
             </div>
           </div>
         </div>
@@ -119,7 +53,7 @@
               <h3 class="footer-brand-title">ShopAccGiaPhong</h3>
             </div>
             <p class="footer-description">
-              Shop acc game uy tín, giá rẻ hàng đầu Việt Nam. Hỗ trợ 24/7, giao dịch tự động, bảo mật tuyệt đối.
+              Shop acc game , hack map , buff MXH (TikTok,Instagram,Facebook,Youtube,Telegram,...) uy tín, giá rẻ hàng đầu Việt Nam. Hỗ trợ 24/7, giao dịch tự động, bảo mật tuyệt đối.
             </p>
           </div>
 
@@ -128,8 +62,8 @@
             <h4 class="footer-heading">SẢN PHẨM</h4>
             <ul class="footer-links">
               <li><a href="#" class="footer-link">Tài khoản Liên Quân</a></li>
-              <li><a href="#" class="footer-link">Tài khoản Free Fire</a></li>
-              <li><a href="#" class="footer-link">Tài khoản Roblox</a></li>
+              <li><a href="#" class="footer-link">Hack Liên Quân Ios</a></li>
+              <li><a href="#" class="footer-link">Hỗ trợ buff tất cả MXH</a></li>
               <li><a href="#" class="footer-link">Nạp thẻ game</a></li>
             </ul>
           </div>

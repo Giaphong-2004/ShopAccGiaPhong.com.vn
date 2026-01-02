@@ -14,7 +14,6 @@
         <router-link to="/" class="nav-link" :class="{ active: $route.path === '/' }">Trang chủ</router-link>
         <router-link to="/topup" class="nav-link" :class="{ active: $route.path === '/topup' }">Nạp tiền</router-link>
         <router-link to="/history" class="nav-link" :class="{ active: $route.path === '/history' }">Lịch sử</router-link>
-        <a href="#" class="nav-link">Blog</a>
       </nav>
 
       <!-- Search & Actions -->
@@ -60,7 +59,6 @@
         <router-link to="/" class="mobile-nav-link" @click="mobileMenuOpen = false">Trang chủ</router-link>
         <router-link to="/topup" class="mobile-nav-link" @click="mobileMenuOpen = false">Nạp tiền</router-link>
         <router-link to="/history" class="mobile-nav-link" @click="mobileMenuOpen = false">Lịch sử</router-link>
-        <a href="#" class="mobile-nav-link" @click="mobileMenuOpen = false">Blog</a>
       </nav>
       <div class="mobile-auth">
         <router-link to="/login" class="btn-login">Đăng nhập</router-link>

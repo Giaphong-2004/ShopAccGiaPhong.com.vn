@@ -144,7 +144,7 @@
               <h3 class="footer-brand-title">ShopAccGiaPhong</h3>
             </div>
             <p class="footer-description">
-              Shop acc game uy tín, giá rẻ hàng đầu Việt Nam. Hỗ trợ 24/7, giao dịch tự động, bảo mật tuyệt đối.
+              Shop acc game , hack map , buff MXH (TikTok,Instagram,Facebook,Youtube,Telegram,...) uy tín, giá rẻ hàng đầu Việt Nam. Hỗ trợ 24/7, giao dịch tự động, bảo mật tuyệt đối.
             </p>
           </div>
 
@@ -153,8 +153,8 @@
             <h4 class="footer-heading">SẢN PHẨM</h4>
             <ul class="footer-links">
               <li><a href="#" class="footer-link">Tài khoản Liên Quân</a></li>
-              <li><a href="#" class="footer-link">Tài khoản Free Fire</a></li>
-              <li><a href="#" class="footer-link">Tài khoản Roblox</a></li>
+              <li><a href="#" class="footer-link">Hack Liên Quân Ios</a></li>
+              <li><a href="#" class="footer-link">Hỗ trợ buff tất cả MXH</a></li>
               <li><a href="#" class="footer-link">Nạp thẻ game</a></li>
             </ul>
           </div>
