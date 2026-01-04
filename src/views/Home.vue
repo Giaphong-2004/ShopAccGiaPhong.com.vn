@@ -15,7 +15,7 @@
           <!-- Game Card 1 -->
           <div class="game-card">
             <div class="game-image">
-              <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=400&h=500&fit=crop" alt="Liên Quân Mobile">
+              <img src="@/assets/images/lienquanmobile.jpg" alt="Liên Quân Mobile">
               <div class="game-badge">120+ Tài khoản</div>
             </div>
             <div class="game-info">
@@ -26,7 +26,7 @@
           <!-- Game Card 2 -->
           <div class="game-card">
             <div class="game-image">
-              <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=500&fit=crop" alt="Free Fire">
+              <img src="@/assets/images/lienquanmobile.jpg" alt="Hack Liên Quân Ios">
               <div class="game-badge">90+ Key đã bán</div>
             </div>
             <div class="game-info">

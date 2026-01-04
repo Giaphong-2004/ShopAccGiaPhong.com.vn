@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
+import ForgotPassword from '../views/ForgotPassword.vue'
 import TopUp from '../views/TopUp.vue'
 import TransactionHistory from '../views/TransactionHistory.vue'
 
@@ -22,6 +23,12 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: Register,
+    meta: { showHeader: false }
+  },
+  {
+    path: '/forgot-password',
+    name: 'ForgotPassword',
+    component: ForgotPassword,
     meta: { showHeader: false }
   },
   {
