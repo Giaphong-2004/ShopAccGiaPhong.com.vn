@@ -9,35 +9,40 @@
         </svg>
       </div>
       
-      <h2 class="auth-title">Quên Mật khẩu?</h2>
-      <p class="auth-subtitle">Đừng lo lắng, hãy nhập email hoặc tên đăng nhập, chúng tôi sẽ gửi hướng dẫn khôi phục ngay lập tức.</p>
+      <h2 class="auth-title">Xác thực OTP</h2>
+      <p class="auth-subtitle">Mã xác thực 6 số đã được gửi đến email/SDT của bạn. Vui lòng kiểm tra hộp thư (bao gồm cả mục Spam).</p>
       
-      <form @submit.prevent="handleForgotPassword" class="auth-form">
+      <form @submit.prevent="handleVerifyOTP" class="auth-form">
         <div class="form-group">
-          <label>Email hoặc Tên đăng nhập</label>
-          <div class="input-wrapper">
-            <svg class="input-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-            </svg>
-            <input 
-              type="text" 
-              v-model="emailOrUsername" 
-              placeholder="user@example.com"
-              required
-            />
-          </div>
+          <label>Nhập mã xác thực</label>
+          <input 
+            type="text" 
+            v-model="otp" 
+            maxlength="6"
+            class="otp-input"
+            placeholder="--•--•--"
+            inputmode="numeric"
+            @input="validateOTP"
+            required
+          />
         </div>
         
-        <button type="submit" class="btn-primary" :disabled="loading">
-          <span v-if="!loading">Xác nhận →</span>
+        <div class="countdown">
+          <span>Gửi lại mã sau</span>
+          <span class="timer">{{ String(minutes).padStart(2, '0') }}:{{ String(seconds).padStart(2, '0') }}</span>
+        </div>
+        
+        <button type="submit" class="btn-primary" :disabled="loading || otp.length !== 6">
+          <span v-if="!loading">Xác nhận</span>
           <span v-else>Đang xử lý...</span>
         </button>
         
         <p class="auth-footer">
-          Nhớ mật khẩu? 
-          <router-link to="/login" class="link">Đăng nhập ngay</router-link>
+          Bạn chưa nhận được mã? 
+          <button type="button" @click="resendOTP" class="link">Gửi lại mã</button>
         </p>
+        
+        <router-link to="/forgot-password" class="back-link">← Quay lại</router-link>
       </form>
       
       <div class="security-badge">
@@ -52,39 +57,76 @@
 
 <script>
 export default {
-  name: 'ForgotPassword',
+  name: 'VerifyOTP',
   data() {
     return {
-      emailOrUsername: '',
-      loading: false
+      otp: '',
+      loading: false,
+      minutes: 0,
+      seconds: 59,
+      timerInterval: null
     }
   },
+  mounted() {
+    this.startCountdown()
+  },
+  beforeUnmount() {
+    this.stopCountdown()
+  },
   methods: {
-    async handleForgotPassword() {
-      if (!this.emailOrUsername) {
-        alert('Vui lòng nhập email hoặc tên đăng nhập')
+    validateOTP(e) {
+      // Only allow numbers
+      this.otp = e.target.value.replace(/[^0-9]/g, '').slice(0, 6)
+    },
+    startCountdown() {
+      this.timerInterval = setInterval(() => {
+        if (this.seconds > 0) {
+          this.seconds--
+        } else if (this.minutes > 0) {
+          this.minutes--
+          this.seconds = 59
+        } else {
+          this.stopCountdown()
+        }
+      }, 1000)
+    },
+    stopCountdown() {
+      if (this.timerInterval) {
+        clearInterval(this.timerInterval)
+      }
+    },
+    async handleVerifyOTP() {
+      if (this.otp.length !== 6) {
+        alert('Vui lòng nhập đầy đủ 6 số OTP')
         return
       }
 
       this.loading = true
       
       try {
-        // TODO: Implement API call to send password reset email
-        // await api.post('/auth/forgot-password', {
-        //   emailOrUsername: this.emailOrUsername
+        // TODO: Implement API call to verify OTP
+        // await api.post('/auth/verify-otp', {
+        //   otp: this.otp
         // })
         
         // Simulate API delay
         await new Promise(resolve => setTimeout(resolve, 1500))
         
-        // Navigate to OTP verification page
-        this.$router.push('/verify-otp')
+        alert('Xác thực OTP thành công!')
+        this.$router.push('/login')
       } catch (error) {
         console.error('Error:', error)
-        alert('Có lỗi xảy ra. Vui lòng thử lại!')
+        alert('Mã OTP không đúng. Vui lòng thử lại!')
       } finally {
         this.loading = false
       }
+    },
+    resendOTP() {
+      this.otp = ''
+      this.minutes = 0
+      this.seconds = 59
+      this.startCountdown()
+      alert('Mã OTP mới đã được gửi!')
     }
   }
 }
@@ -155,40 +197,47 @@ export default {
   text-align: left;
 }
 
-.input-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.input-icon {
-  position: absolute;
-  left: 1rem;
-  color: var(--text-secondary);
-  flex-shrink: 0;
-}
-
-.form-group input {
+.otp-input {
   width: 100%;
-  padding: 0.875rem 1rem 0.875rem 3rem;
+  padding: 1rem;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  border-radius: 8px;
+  border: 2px solid rgba(99, 102, 241, 0.3);
+  border-radius: 12px;
   color: var(--text-primary);
-  font-size: 0.95rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.5rem;
+  text-align: center;
+  font-weight: 600;
   outline: none;
   transition: all 0.2s;
 }
 
-.form-group input:focus {
+.otp-input:focus {
   background: rgba(255, 255, 255, 0.08);
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 
-.form-group input::placeholder {
+.otp-input::placeholder {
   color: var(--text-secondary);
   opacity: 0.5;
+}
+
+.countdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+}
+
+.timer {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1rem;
 }
 
 .btn-primary {
@@ -236,6 +285,19 @@ export default {
   color: #a78bfa;
 }
 
+.back-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  display: inline-block;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--primary);
+}
+
 .security-badge {
   display: flex;
   align-items: center;
@@ -267,6 +329,11 @@ export default {
 
   .auth-title {
     font-size: 1.5rem;
+  }
+
+  .otp-input {
+    font-size: 1rem;
+    letter-spacing: 0.25rem;
   }
 }
 </style>

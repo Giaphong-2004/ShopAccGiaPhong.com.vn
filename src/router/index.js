@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import ForgotPassword from '../views/ForgotPassword.vue'
+import VerifyOTP from '../views/VerifyOTP.vue'
 import GameList from '../views/GameList.vue'
 import GameDetail from '../views/GameDetail.vue'
 import TopUp from '../views/TopUp.vue'
@@ -31,6 +32,12 @@ const routes = [
     path: '/forgot-password',
     name: 'ForgotPassword',
     component: ForgotPassword,
+    meta: { showHeader: false }
+  },
+  {
+    path: '/verify-otp',
+    name: 'VerifyOTP',
+    component: VerifyOTP,
     meta: { showHeader: false }
   },
   {
