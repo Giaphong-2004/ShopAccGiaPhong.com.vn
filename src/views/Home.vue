@@ -13,7 +13,7 @@
       <div class="container">
         <div class="games-grid">
           <!-- Game Card 1 -->
-          <div class="game-card">
+          <div class="game-card" @click="goToGameList">
             <div class="game-image">
               <img src="@/assets/images/lienquanmobile.jpg" alt="Liên Quân Mobile">
               <div class="game-badge">120+ Tài khoản</div>
@@ -24,7 +24,7 @@
           </div>
 
           <!-- Game Card 2 -->
-          <div class="game-card">
+          <div class="game-card" @click="goToGameList">
             <div class="game-image">
               <img src="@/assets/images/lienquanmobile.jpg" alt="Hack Liên Quân Ios">
               <div class="game-badge">90+ Key đã bán</div>
@@ -107,7 +107,12 @@
 
 <script>
 export default {
-  name: 'Home'
+  name: 'Home',
+  methods: {
+    goToGameList() {
+      this.$router.push('/games')
+    }
+  }
 }
 </script>
 

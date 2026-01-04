@@ -3,6 +3,8 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import ForgotPassword from '../views/ForgotPassword.vue'
+import GameList from '../views/GameList.vue'
+import GameDetail from '../views/GameDetail.vue'
 import TopUp from '../views/TopUp.vue'
 import TransactionHistory from '../views/TransactionHistory.vue'
 
@@ -30,6 +32,18 @@ const routes = [
     name: 'ForgotPassword',
     component: ForgotPassword,
     meta: { showHeader: false }
+  },
+  {
+    path: '/games',
+    name: 'GameList',
+    component: GameList,
+    meta: { showHeader: true }
+  },
+  {
+    path: '/games/:id',
+    name: 'GameDetail',
+    component: GameDetail,
+    meta: { showHeader: true }
   },
   {
     path: '/topup',
