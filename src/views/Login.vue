@@ -2,10 +2,25 @@
   <div class="auth-container">
     <div class="auth-card">
       <div class="logo">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <path d="M8 32L20 8L32 32H8Z" fill="#6366f1"/>
+        <svg width="40" height="40" viewBox="0 0 64 64" fill="none">
+          <defs>
+            <linearGradient id="evilGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#ff0000;stop-opacity:1" />
+              <stop offset="50%" style="stop-color:#ff6600;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#cc0000;stop-opacity:1" />
+            </linearGradient>
+            <filter id="terrifyingGlow"><feGaussianBlur stdDeviation="2.5" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="intenseGlow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <path d="M16 8L10 0L14 14C14 18 16 22 20 24Z" fill="#ff0000" stroke="#ff6600" stroke-width="2" filter="url(#terrifyingGlow)"/>
+          <path d="M48 8L54 0L50 14C50 18 48 22 44 24Z" fill="#ff0000" stroke="#ff6600" stroke-width="2" filter="url(#terrifyingGlow)"/>
+          <circle cx="22" cy="28" r="5" fill="#ff0000" filter="url(#intenseGlow)"/><circle cx="22" cy="28" r="3.5" fill="#00ff00"/><circle cx="22" cy="28" r="2" fill="#000"/>
+          <circle cx="42" cy="28" r="5" fill="#ff0000" filter="url(#intenseGlow)"/><circle cx="42" cy="28" r="3.5" fill="#00ff00"/><circle cx="42" cy="28" r="2" fill="#000"/>
+          <path d="M28 42L26 48L30 42Z" fill="#00ff00"/><path d="M36 42L38 48L34 42Z" fill="#00ff00"/>
+          <path d="M32 24C16 26 8 38 8 52C8 60 18 64 32 64C46 64 56 60 56 52C56 38 48 26 32 24Z" fill="url(#evilGradient)" stroke="#ff6600" stroke-width="2.5"/>
+          <circle cx="32" cy="46" r="6" fill="#00ff00" opacity="0.6" filter="url(#intenseGlow)"/><circle cx="32" cy="46" r="4" fill="#ff0000"/><circle cx="32" cy="46" r="2.5" fill="#ffff00"/>
         </svg>
-        <h1>GameStore</h1>
+        <h1>DGP 2004</h1>
       </div>
       
       <h2 class="auth-title">Chào mừng trở lại!</h2>
@@ -136,3 +151,107 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.logo svg {
+  animation: rainbowGlow 4s linear infinite, demonRotate 8s linear infinite, bounceUpDown 1.2s ease-in-out infinite;
+}
+
+.logo h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  animation: rainbowText 4s linear infinite, bounceUpDown 1.2s ease-in-out infinite;
+  background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes rainbowText {
+  0% {
+    color: #ff0000;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+  }
+  14% {
+    color: #ff6600;
+    text-shadow: 0 0 8px rgba(255, 102, 0, 0.6);
+  }
+  28% {
+    color: #ffff00;
+    text-shadow: 0 0 8px rgba(255, 255, 0, 0.6);
+  }
+  42% {
+    color: #00ff00;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
+  }
+  57% {
+    color: #0099ff;
+    text-shadow: 0 0 8px rgba(0, 153, 255, 0.6);
+  }
+  71% {
+    color: #9933ff;
+    text-shadow: 0 0 8px rgba(153, 51, 255, 0.6);
+  }
+  85% {
+    color: #ff00ff;
+    text-shadow: 0 0 8px rgba(255, 0, 255, 0.6);
+  }
+  100% {
+    color: #ff0000;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+  }
+}
+
+@keyframes rainbowGlow {
+  0% {
+    filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.8));
+  }
+  14% {
+    filter: drop-shadow(0 0 8px rgba(255, 102, 0, 0.8));
+  }
+  28% {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 0, 0.8));
+  }
+  42% {
+    filter: drop-shadow(0 0 8px rgba(0, 255, 0, 0.8));
+  }
+  57% {
+    filter: drop-shadow(0 0 8px rgba(0, 153, 255, 0.8));
+  }
+  71% {
+    filter: drop-shadow(0 0 8px rgba(153, 51, 255, 0.8));
+  }
+  85% {
+    filter: drop-shadow(0 0 8px rgba(255, 0, 255, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.8));
+  }
+}
+
+@keyframes bounceUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes demonRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
